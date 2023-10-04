@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Gestión de ideas";
+}
+
+<h2>IDEAS</h2>
+<p>Aquí puedes crear, ver y editar tus ideas.</p>
+
+<div>
+    @using (Html.BeginForm("Crear_idea", "CrearIdea", FormMethod.Get))
+    {
+        <input type="submit" value="Crear idea" class="btn btn-primary" />
+    }
+
+    @using (Html.BeginForm("Detalles_idea", "Home"))
+    {
+        <input type="submit" value="Ver idea" class="btn btn-primary" />
+    }
+
+    @using (Html.BeginForm("Editar_idea", "Home"))
+    {
+        <input type="submit" value="Editar idea" class="btn btn-primary" />
+    }
+</div>
+
+

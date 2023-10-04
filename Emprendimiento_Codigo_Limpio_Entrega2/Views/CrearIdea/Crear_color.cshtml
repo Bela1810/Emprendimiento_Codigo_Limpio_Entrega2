@@ -1,0 +1,46 @@
+﻿@model Emprendimiento_Codigo_Limpio_Entrega2.Models.ColorModel
+
+@{
+    ViewBag.Title = "Crear Color";
+}
+
+<h2>Crear Color</h2>
+
+@using (Html.BeginForm("Crear_color", "CrearIdea", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="colorSelect">Selecciona los colores:</label>
+        <select id="colorSelect" name="ColorSeleccionado" class="form-control">
+            @foreach (var color in Model.ColoresEconomia)
+            {
+                <option value="@color.Key">@color.Key</option>
+            }
+        </select>
+    </div>
+
+    <input type="submit" value="Agregar color" class="btn btn-default" />
+}
+
+<div class="container">
+    <h2>Colores de la Economía</h2>
+    <p>Los colores representan diferentes sectores de la economía:</p>
+    <ul>
+        @foreach (var color in Model.ColoresEconomia)
+        {
+            <li><strong>@color.Key</strong>: @color.Value</li>
+        }
+    </ul>
+</div>
+
+
+@using (Html.BeginForm("Crear_herramienta", "CrearIdea", FormMethod.Post))
+{
+    <input type="submit" value="Siguiente" class="btn btn-default" />
+}
+
+@using (Html.BeginForm("Crear_miembro", "CrearIdea", FormMethod.Post))
+{
+    <input type="submit" value="Atras" class="btn btn-default" />
+}
+
+

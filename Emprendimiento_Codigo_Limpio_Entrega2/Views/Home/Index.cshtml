@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Página principal";
+}
+
+<h1>EMPRENDIMIENTO 4RI</h1>
+<p>El Gobierno Nacional desea apoyar los mejores emprendimientos que en su idea de negocio incluyan herramientas de la 4RI y beneficien la transformación social y económica del país, para lograrlo lanza un programa a nivel nacional, y desea contratarlo a usted para que desarrolle una herramienta digital que capture la información de todas las ideas de negocio y luego ayude a elegir las mejores propuestas.</p>
+<h3>Aquí puedes gestionar tus ideas y ver estadísticas sobre ellas.</h3>
+
+<div>
+    @using (Html.BeginForm("GestionIdeas", "Home"))
+    {
+        <input type="submit" value="Gestión de ideas" class="btn btn-primary" />
+    }
+
+    @using (Html.BeginForm("EstadisticasIdea", "Home"))
+    {
+        <input type="submit" value="Estadísticas de una idea" class="btn btn-primary" />
+    }
+</div>

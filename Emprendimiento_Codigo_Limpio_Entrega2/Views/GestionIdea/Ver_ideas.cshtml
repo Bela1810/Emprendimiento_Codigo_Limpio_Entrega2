@@ -1,0 +1,51 @@
+﻿@model List<Emprendimiento_Codigo_Limpio_Entrega2.Models.IdeaModel>
+
+@{
+    ViewBag.Title = "Detalles de todas las ideas";
+}
+
+@foreach (var idea in Model)
+{
+    <h2>@ViewBag.Title</h2>
+
+    <p>
+        <strong>Código de la idea:</strong> @Html.DisplayFor(modelItem => idea.CodigoIdea)
+    </p>
+
+    <p>
+        <strong>Nombre de la idea:</strong> @Html.DisplayFor(modelItem => idea.NombreIdea)
+    </p>
+
+    <p>
+        <strong>Inversión requerida:</strong> @Html.DisplayFor(modelItem => idea.InversionRequeridaIdea)
+    </p>
+
+    <p>
+        <strong>Objetivos de ingresos:</strong> @Html.DisplayFor(modelItem => idea.ObjetivosDeIngresosIdea)
+    </p>
+
+    if (idea.Miembros != null && idea.Miembros.Count > 0)
+    {
+        <p>
+            <strong>Miembros:</strong>
+            <ul>
+                @foreach (var miembro in idea.Miembros)
+                {
+                    <li>@miembro.Nombre (@miembro.Rol)</li>
+                }
+            </ul>
+        </p>
+    }
+    else
+    {
+        <p>No hay miembros en esta idea.</p>
+    }
+
+    <hr />
+    <!-- Separador para cada idea -->
+}
+@using (Html.BeginForm("GestionIdeas", "Home", FormMethod.Post))
+{
+    <input type="submit" value="Atras" class="btn btn-default" />
+}
+

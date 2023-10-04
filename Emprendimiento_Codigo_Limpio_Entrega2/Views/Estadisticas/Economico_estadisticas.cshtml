@@ -1,0 +1,135 @@
+﻿@model Emprendimiento_Codigo_Limpio_Entrega2.Models.DesarrolloRegionalModel
+
+
+
+<style>
+
+    .btn {
+        border: 1px solid #007BFF; /* Borde azul */
+        border-radius: 3px; /* Bordes redondeados para un aspecto moderno */
+        max-width: 300%;
+        transition: all 0.3s ease; /* Transición suave al pasar el ratón */
+    }
+
+        .btn:hover {
+            border-color: #0056b3; /* Cambia el color del borde al pasar el ratón */
+        }
+
+
+
+    .siguiente {
+        position: relative;
+        bottom: 5px;
+        float: right;
+        border: 2px solid lightgreen;
+        color: blue;
+        background-color: white;
+        padding: 10px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+        .siguiente:hover {
+            background-color: lightgreen;
+            color: white;
+        }
+
+
+    .atras {
+        border: 2px solid lightgreen;
+        color: blue;
+        background-color: white;
+        padding: 10px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+        .atras:hover {
+            background-color: lightgreen;
+            color: white;
+        }
+</style>
+
+
+
+
+@using (Html.BeginForm("EncontrarIdeaConMasIngresos", "Estadisticas", FormMethod.Post))
+{
+    <input type="submit" value="Encontrar Idea con Más Ingresos" class="btn btn-default" />
+}
+
+@if (ViewBag.ResultadosEncontrarIdeaConMasIngresos != null)
+{
+    <label>@ViewBag.ResultadosEncontrarIdeaConMasIngresos.NombreIdea</label>
+}
+
+
+@using (Html.BeginForm("EncontrarIdeasMasRentables", "Estadisticas", FormMethod.Post))
+{
+    <input type="submit" value="Encontrar Ideas Más Rentables" class="btn btn-default" />
+}
+
+@if (ViewBag.ResultadosEncontrarIdeasMasRentables != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre de la Idea</th>
+                <!-- Agrega más columnas según sea necesario -->
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var idea in ViewBag.ResultadosEncontrarIdeasMasRentables)
+            {
+                <tr>
+                    <td>@idea.NombreIdea</td>
+                    <!-- Agrega más celdas según sea necesario -->
+                </tr>
+            }
+
+        </tbody>
+    </table>
+}
+
+
+@using (Html.BeginForm("CalcularIngresosTotales", "Estadisticas", FormMethod.Post))
+{
+    <input type="submit" value="Calcular Ingresos Totales" class="btn btn-default" />
+}
+
+@if (ViewBag.ResultadosCalcularIngresosTotales != null)
+{
+    <label>Ingresos Totales: @ViewBag.ResultadosCalcularIngresosTotales</label>
+}
+
+
+@using (Html.BeginForm("CalcularInversionTotal", "Estadisticas", FormMethod.Post))
+{
+    <input type="submit" value="Calcular Inversión Total" class="btn btn-default" />
+}
+
+@if (ViewBag.ResultadosCalcularInversionTotal != null)
+{
+    <label>Inversión Total: @ViewBag.ResultadosCalcularInversionTotal</label>
+}
+
+
+@using (Html.BeginForm("Tecnologico_estadisticas", "Estadisticas", FormMethod.Post))
+{
+    <input type="submit" value="siguiente" class="siguiente" />
+}
+
+
+@using (Html.BeginForm("Departamental_estadisticas", "Estadisticas", FormMethod.Post))
+{
+    <input type="submit" value="Atras" class="atras" />
+}

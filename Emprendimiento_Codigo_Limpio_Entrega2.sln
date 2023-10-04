@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emprendimiento_Codigo_Limpio_Entrega2", "Emprendimiento_Codigo_Limpio_Entrega2\Emprendimiento_Codigo_Limpio_Entrega2.csproj", "{8D075F50-E52F-4091-8CEC-FC788A32FDF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebasUnitariasEmprendimiento", "PruebasUnitariasEmprendimiento\PruebasUnitariasEmprendimiento.csproj", "{74528574-4853-403F-937D-6BDED2C9DFAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D075F50-E52F-4091-8CEC-FC788A32FDF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D075F50-E52F-4091-8CEC-FC788A32FDF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D075F50-E52F-4091-8CEC-FC788A32FDF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D075F50-E52F-4091-8CEC-FC788A32FDF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74528574-4853-403F-937D-6BDED2C9DFAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74528574-4853-403F-937D-6BDED2C9DFAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74528574-4853-403F-937D-6BDED2C9DFAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74528574-4853-403F-937D-6BDED2C9DFAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1CCFD89C-880B-4FCD-B887-8564B72B921F}
+	EndGlobalSection
+EndGlobal

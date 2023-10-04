@@ -1,0 +1,112 @@
+﻿@model Emprendimiento_Codigo_Limpio_Entrega2.Models.DesarrolloRegionalModel
+
+@{
+    ViewBag.Title = "Tecnologico_estadisticas";
+}
+
+
+
+<style>
+
+    .btn {
+        border: 1px solid #007BFF; /* Borde azul */
+        border-radius: 3px; /* Bordes redondeados para un aspecto moderno */
+        max-width: 300%;
+        transition: all 0.3s ease; /* Transición suave al pasar el ratón */
+    }
+
+        .btn:hover {
+            border-color: #0056b3; /* Cambia el color del borde al pasar el ratón */
+        }
+
+
+
+    .siguiente {
+        position: relative;
+        bottom: 5px;
+        float: right;
+        border: 2px solid lightgreen;
+        color: blue;
+        background-color: white;
+        padding: 10px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+        .siguiente:hover {
+            background-color: lightgreen;
+            color: white;
+        }
+
+
+    .atras {
+        border: 2px solid lightgreen;
+        color: blue;
+        background-color: white;
+        padding: 10px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+        .atras:hover {
+            background-color: lightgreen;
+            color: white;
+        }
+</style>
+
+
+
+
+
+@using (Html.BeginForm("EncontrarIdeaConMasHerramientas4RI", "Estadisticas", FormMethod.Post))
+{
+    <input type="submit" value="Encontrar Idea con Más Herramientas 4RI" class="btn btn-default" />
+}
+
+@if (ViewBag.ResultadosEncontrarIdeaConMasHerramientas4RI != null)
+{
+    <label>Idea con más Herramientas 4RI: @ViewBag.ResultadosEncontrarIdeaConMasHerramientas4RI.NombreIdea</label>
+}
+
+@using (Html.BeginForm("ContarIdeasConInteligenciaArtificial", "Estadisticas", FormMethod.Post))
+{
+    <input type="submit" value="Contar Ideas con Inteligencia Artificial" class="btn btn-default" />
+}
+
+@if (ViewBag.ResultadosContarIdeasConInteligenciaArtificial != null)
+{
+    <label>Número de Ideas con Inteligencia Artificial: @ViewBag.ResultadosContarIdeasConInteligenciaArtificial</label>
+}
+
+@using (Html.BeginForm("ContarIdeasConDesarrolloSostenible", "Estadisticas", FormMethod.Post))
+{
+    <input type="submit" value="Contar Ideas con Desarrollo Sostenible" class="btn btn-default" />
+    if (!String.IsNullOrEmpty(ViewBag.ResultadoContarIdeasConDesarrolloSostenible))
+    {
+        <span>@ViewBag.ResultadoContarIdeasConDesarrolloSostenible</span>
+    }
+
+    else
+    {
+        <span>No hay ideas con desarrollo sostenible</span>
+    }
+}
+
+
+
+
+
+
+@using (Html.BeginForm("Economico_estadisticas", "Estadisticas", FormMethod.Post))
+{
+    <input type="submit" value="Atras" class="atras" />
+}
+

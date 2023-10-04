@@ -1,0 +1,129 @@
+﻿@model Emprendimiento_Codigo_Limpio_Entrega2.Models.DesarrolloRegionalModel
+
+<h2>Gestión de Desarrollo Regional</h2>
+
+
+<style>
+
+    .btn {
+        border: 1px solid #007BFF; /* Borde azul */
+        border-radius: 3px; /* Bordes redondeados para un aspecto moderno */
+        max-width: 300%;
+        transition: all 0.3s ease; /* Transición suave al pasar el ratón */
+    }
+
+        .btn:hover {
+            border-color: #0056b3; /* Cambia el color del borde al pasar el ratón */
+        }
+
+
+
+    .siguiente {
+        position: relative;
+        bottom: 40px;
+        float: right;
+        border: 2px solid lightgreen;
+        color: blue;
+        background-color: white;
+        padding: 10px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+        .siguiente:hover {
+            background-color: lightgreen;
+            color: white;
+        }
+</style>
+
+
+
+@if (ViewBag.Resultados != null)
+{
+    <label>@ViewBag.IdeaCodigo</label>
+}
+
+
+@using (Html.BeginForm("EncontrarIdeaQueImpactaMasDepartamentos", "Estadisticas", FormMethod.Post))
+{
+    <input type="submit" value="Encontrar Idea que Impacta Más Departamentos" class="btn btn-default" />
+}
+
+@if (ViewBag.Resultados != null)
+{
+    <label>@ViewBag.Resultados</label>
+}
+
+@using (Html.BeginForm("DevolverDepartamentosAfectados", "Estadisticas", FormMethod.Post))
+{
+    <input type="submit" value="Devolver Departamentos Afectados" class="btn btn-default" />
+}
+
+@if (ViewBag.ResultadosDevolverDepartamentos != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Departamento</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var departamento in ViewBag.ResultadosDevolverDepartamentos)
+            {
+                <tr>
+                    <td>@departamento</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+
+@using (Html.BeginForm("EncontrarIdeasImpactandoMasDeTresDepartamentos", "Estadisticas", FormMethod.Post))
+{
+    <input type="submit" value="Encontrar Ideas Impactando Más de Tres Departamentos" class="btn btn-default" />
+}
+
+@if (ViewBag.ResultadosEncontrarIdeasImpactandoMasDeTresDepartamentos != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre de la Idea</th>
+                <!-- Agrega más columnas según sea necesario -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var idea in ViewBag.ResultadosEncontrarIdeasImpactandoMasDeTresDepartamentos)
+            {
+                <tr>
+                    <td>@idea.NombreIdea</td>
+                    <!-- Agrega más celdas según sea necesario -->
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+@if (!String.IsNullOrEmpty(ViewBag.ResultadoObtenerTodasLasIdeas))
+{
+    <p>
+        <strong>Resultado del método ObtenerTodasLasIdeas:</strong>
+        <label>@ViewBag.ResultadoObtenerTodasLasIdeas</label>
+    </p>
+}
+
+@using (Html.BeginForm("Economico_estadisticas", "Estadisticas", FormMethod.Post))
+{
+    <input type="submit" value="siguiente" class="siguiente" />
+}
+
+

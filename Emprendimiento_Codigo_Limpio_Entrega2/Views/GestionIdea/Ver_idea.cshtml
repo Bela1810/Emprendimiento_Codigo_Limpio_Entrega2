@@ -1,0 +1,69 @@
+﻿@model Emprendimiento_Codigo_Limpio_Entrega2.Models.IdeaModel
+
+@{
+    ViewBag.Title = "Detalles de la idea";
+}
+
+@using (Html.BeginForm("VerIdea", "VerIdea", FormMethod.Post))
+{
+    <p>
+        Introduce el código de la idea:
+        @Html.TextBox("id")
+        <input type="submit" value="Buscar" />
+    </p>
+}
+
+@using (Html.BeginForm("ImprimirTodasLasIdeas", "VerIdea", FormMethod.Post))
+{
+    <p>
+        <input type="submit" value="Imprimir todas las ideas" />
+    </p>
+}
+
+@if (Model != null)
+{
+    <h2>@ViewBag.Title</h2>
+
+    <p>
+        <strong>Código de la idea:</strong> @Html.DisplayFor(model => model.CodigoIdea)
+    </p>
+
+    <p>
+        <strong>Nombre de la idea:</strong> @Html.DisplayFor(model => model.NombreIdea)
+    </p>
+
+    <p>
+        <strong>Inversión requerida:</strong> @Html.DisplayFor(model => model.InversionRequeridaIdea)
+    </p>
+
+    <p>
+        <strong>Objetivos de ingresos:</strong> @Html.DisplayFor(model => model.ObjetivosDeIngresosIdea)
+    </p>
+
+    if (Model.Miembros != null && Model.Miembros.Count > 0)
+    {
+        <p>
+            <strong>Miembros:</strong>
+            <ul>
+                @foreach (var miembro in Model.Miembros)
+                {
+                    <li>@miembro.Nombre (@miembro.Rol)</li>
+                }
+            </ul>
+        </p>
+    }
+    else
+    {
+        <p>No hay miembros en esta idea.</p>
+    }
+
+    <p>
+        <a href="@Url.Action("Index")">Volver a la lista</a>
+    </p>
+}
+
+@using (Html.BeginForm("GestionIdeas", "Home", FormMethod.Post))
+{
+    <input type="submit" value="Atras" class="btn btn-default" />
+}
+

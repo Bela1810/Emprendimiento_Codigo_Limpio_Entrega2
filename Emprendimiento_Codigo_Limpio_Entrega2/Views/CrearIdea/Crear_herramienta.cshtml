@@ -1,0 +1,39 @@
+﻿@model Emprendimiento_Codigo_Limpio_Entrega2.Models.HerramientasModel
+
+
+@{
+    ViewBag.Title = "Herramientas de la Cuarta Revolución Industrial";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>Selecciona una herramienta de la lista a continuación:</p>
+
+<ul>
+    @foreach (var herramienta in Model.Herramientas4RevolucionIndustrial)
+    {
+        <li>@herramienta.Key: @herramienta.Value</li>
+    }
+</ul>
+
+@using (Html.BeginForm("Crear_herramienta", "CrearIdea", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="herramientaInput">Ingresa el número de una herramienta:</label>
+        <input type="number" id="herramientaInput" name="HerramientaSeleccionada" class="form-control" min="1" max="@Model.Herramientas4RevolucionIndustrial.Count" />
+    </div>
+
+    <input type="submit" value="Enviar" class="btn btn-default" />
+}
+
+@using (Html.BeginForm("Finalizar", "CrearIdea", FormMethod.Post))
+{
+    <input type="submit" value="Terminar formulario" class="btn btn-default" />
+}
+
+@using (Html.BeginForm("Crear_color", "CrearIdea", FormMethod.Post))
+{
+    <input type="submit" value="Atras" class="btn btn-default" />
+}
+
+
