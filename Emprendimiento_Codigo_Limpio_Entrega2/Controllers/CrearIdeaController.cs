@@ -43,6 +43,7 @@ namespace Emprendimiento_Codigo_Limpio_Entrega2.Controllers
                 float total_idea = ideaModel.ObjetivosDeIngresosIdea;
 
                 Session["IdeaActual"] = ideaModel;
+                
 
                 // Redirigir a otra acción
                 return RedirectToAction("Crear_miembro");

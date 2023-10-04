@@ -122,12 +122,12 @@ namespace Emprendimiento_Codigo_Limpio_Entrega2.Models
             Miembros.Remove(miembro);
         }
 
-        public void ModificarValorInversion(int nuevoValorInversion)
+        public void ModificarValorInversion(float nuevoValorInversion)
         {
             InversionRequeridaIdea = nuevoValorInversion;
         }
 
-        public void ModificarValorTotal(int nuevoValorTotal)
+        public void ModificarValorTotal(float nuevoValorTotal)
         {
             ObjetivosDeIngresosIdea = nuevoValorTotal;
         }

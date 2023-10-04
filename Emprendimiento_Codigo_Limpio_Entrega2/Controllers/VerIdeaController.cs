@@ -65,12 +65,33 @@ namespace Emprendimiento_Codigo_Limpio_Entrega2.Controllers
 
 
 
-
+        [HttpGet]
         public ActionResult EditarIdea()
         {
+            
+
             return View("~/Views/GestionIdea/Editar_idea.cshtml");
         }
 
+        [HttpPost]
+        public ActionResult EditarIdea(IdeaModel idea)
+        {
+            DesarrolloRegionalModel colombia = Session["colombia"] as DesarrolloRegionalModel;
+            if (colombia.IdeasDesarrolloRegional == null)
+            {
+                System.Diagnostics.Debug.WriteLine("no llego ninguna idea aqui ...");
+                return HttpNotFound();
+            }
+            int id= idea.CodigoIdea; 
+            string nombre = idea.NombreIdea;
+            float inversion_idea = idea.InversionRequeridaIdea;
+            float total_idea = idea.ObjetivosDeIngresosIdea;
+
+            IdeaModel ideal = desarrolloRegionalModel.ObtenerIdeaPorCodigo(id, colombia);
+            ideal.ModificarValorInversion(inversion_idea);
+            ideal.ModificarValorTotal(total_idea);
+            return View("~/Views/GestionIdea/Ver_ideas.cshtml", colombia.IdeasDesarrolloRegional);
+        }
 
     }
 }
