@@ -269,7 +269,29 @@ namespace Emprendimiento_Codigo_Limpio_Entrega2.Controllers
         }
 
 
+        public ActionResult EncontrarQueSuImpactoContenga()
+        {
+            DesarrolloRegionalModel colombia = Session["colombia"] as DesarrolloRegionalModel;
+            List<IdeaModel> ideas = new List<IdeaModel>();
 
+            ideas = desarrolloRegionalModel.EncontrarIdeasQueSuImpactoContenga(colombia);
+
+            ViewBag.ResultadosQueSuImpactoContenga = ideas;
+            return View("~/Views/Estadisticas/Economico_estadisticas.cshtml");
+
+        }
+
+        public ActionResult EncontrarIdeaQueMayorInfraestructura()
+        {
+            DesarrolloRegionalModel colombia = Session["colombia"] as DesarrolloRegionalModel;
+            
+
+            ideaModel = desarrolloRegionalModel.EncontrarMayorInversionInfraestructura(colombia);
+
+            ViewBag.ResultadosInfraestructura = ideaModel;
+            return View("~/Views/Estadisticas/Economico_estadisticas.cshtml");
+
+        }
 
 
 

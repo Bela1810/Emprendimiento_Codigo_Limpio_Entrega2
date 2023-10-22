@@ -123,6 +123,49 @@
 }
 
 
+@using (Html.BeginForm("EncontrarQueSuImpactoContenga", "Estadisticas", FormMethod.Post))
+{
+    <input type="submit" value="Encontrar Idea que su impacto contenga territorios inteligente o transicion energetica" class="btn btn-default" />
+}
+
+@if (ViewBag.ResultadosQueSuImpactoContenga != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre de la Idea</th>
+                <!-- Agrega más columnas según sea necesario -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var idea in ViewBag.ResultadosQueSuImpactoContenga)
+            {
+                <tr>
+                    <td>@idea.NombreIdea</td>
+                    <!-- Agrega más celdas según sea necesario -->
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+@using (Html.BeginForm("EncontrarIdeaQueMayorInfraestructura", "Estadisticas", FormMethod.Post))
+{
+    <input type="submit" value="Encontrar Idea que con mayor infraestructura" class="btn btn-default" />
+}
+
+@if (ViewBag.ResultadosInfraestructura != null)
+{
+    <label>@ViewBag.ResultadosInfraestructura.NombreIdea</label>
+}
+
+
+
+
+
+
 @using (Html.BeginForm("Tecnologico_estadisticas", "Estadisticas", FormMethod.Post))
 {
     <input type="submit" value="siguiente" class="siguiente" />

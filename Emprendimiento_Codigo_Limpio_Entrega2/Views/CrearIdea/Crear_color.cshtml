@@ -4,25 +4,14 @@
     ViewBag.Title = "Crear Color";
 }
 
-<h2>Crear Color</h2>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
 
-@using (Html.BeginForm("Crear_color", "CrearIdea", FormMethod.Post))
-{
-    <div class="form-group">
-        <label for="colorSelect">Selecciona los colores:</label>
-        <select id="colorSelect" name="ColorSeleccionado" class="form-control">
-            @foreach (var color in Model.ColoresEconomia)
-            {
-                <option value="@color.Key">@color.Key</option>
-            }
-        </select>
-    </div>
+<h2 class="parrafo_crear_color">CREAR COLOR</h2>
 
-    <input type="submit" value="Agregar color" class="btn btn-default" />
-}
-
-<div class="container">
-    <h2>Colores de la Economía</h2>
+<div class="colores-info">
     <p>Los colores representan diferentes sectores de la economía:</p>
     <ul>
         @foreach (var color in Model.ColoresEconomia)
@@ -32,15 +21,126 @@
     </ul>
 </div>
 
+@using (Html.BeginForm("Crear_color", "CrearIdea", FormMethod.Post))
+{
+    <div class="form-group">
+        <label class="label-seleccionar_color" for="colorSelect">Selecciona los colores:</label>
+        <select  id="colorSelect" name="ColorSeleccionado" class="form-control">
+            @foreach (var color in Model.ColoresEconomia)
+            {
+                <option value="@color.Key">@color.Key</option>
+            }
+        </select>
+
+        <input type="submit" value="Agregar Color" class="btn btn-default agregar_color-btn" />
+    </div>
+
+}
+
 
 @using (Html.BeginForm("Crear_herramienta", "CrearIdea", FormMethod.Post))
 {
-    <input type="submit" value="Siguiente" class="btn btn-default" />
+    <input type="submit" value="Siguiente" class="btn btn-default siguiente-btn" />
 }
 
 @using (Html.BeginForm("Crear_miembro", "CrearIdea", FormMethod.Post))
 {
-    <input type="submit" value="Atras" class="btn btn-default" />
+    <input type="submit" value="Atras" class="btn btn-default atras-btn" />
 }
 
+<style>
+
+    body {
+        background-image: url('../../Imagenes/Imagen_5..png');
+        background-size: 50%;
+        background-color: #A5EAF3;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+    }
+
+    .parrafo_crear_color {
+        font-family: 'Roboto', sans-serif;
+        margin-left: 100px;
+        font-size: 30px;
+    }
+
+    .colores-info {
+        font-family: Consolas;
+        margin-top: 35px;
+        line-height: 1.5;
+        word-wrap: break-word;
+        background-color: white;
+        margin: 0 auto;
+        max-width: 600px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        top: 10px;
+        right: 300px;
+    }
+
+    .label-seleccionar_color {
+        font-family: Consolas;
+        margin-top: 30px;
+        margin-left: 40px;
+    }
+
+    .form-control {
+        margin-top: 10px;
+        margin-left: 35px;
+    }
+
+    .agregar_color-btn {
+        font-size: 16px;
+        text-align: center;
+        background-color: #F2A154;
+        color: white;
+        font-size: 18px;
+        font-family: 'Roboto', sans-serif;
+        font-family: 'Ubuntu', sans-serif;
+        border-radius: 40px;
+        cursor: pointer;
+        position: relative;
+        margin-left: 350px;
+        top: -40px;
+    }
+
+    .siguiente-btn {
+        font-size: 16px;
+        text-align: center;
+        background-color: #F2A154;
+        color: white;
+        font-size: 18px;
+        font-family: 'Roboto', sans-serif;
+        font-family: 'Ubuntu', sans-serif;
+        border-radius: 40px;
+        cursor: pointer;
+        position: relative;
+        margin-left: 300px;
+        top: -10px;
+    }
+
+    .atras-btn {
+        font-size: 16px;
+        text-align: center;
+        background-color: #F2A154;
+        color: white;
+        font-size: 18px;
+        font-family: 'Roboto', sans-serif;
+        font-family: 'Ubuntu', sans-serif;
+        border-radius: 40px;
+        cursor: pointer;
+        position: relative;
+        margin-left: 40px;
+        width: 100px;
+        top: -50px;
+    }
+
+
+
+</style>
 

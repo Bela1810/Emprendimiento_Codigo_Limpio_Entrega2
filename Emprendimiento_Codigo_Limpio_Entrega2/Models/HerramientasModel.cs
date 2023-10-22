@@ -28,7 +28,7 @@ namespace Emprendimiento_Codigo_Limpio_Entrega2.Models
             Herramientas4RevolucionIndustrial[10] = "Big Data y Análisis Predictivo";
             Herramientas4RevolucionIndustrial[11] = "Automatización Industrial y Robótica Industrial";
             Herramientas4RevolucionIndustrial[12] = "Desarrollo sostenible usando una o mas herramientas de la cuarta revolución industrial";
-
+            
 
         }
 

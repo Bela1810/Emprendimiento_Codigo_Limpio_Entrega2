@@ -23,6 +23,8 @@ namespace Emprendimiento_Codigo_Limpio_Entrega2.Models
         [Required(ErrorMessage = "Los Objetivos es obligatorio")]
         public float ObjetivosDeIngresosIdea { get; set; }
 
+        public float InversionInfraestructura {  get; set; }
+
         /* Aquí tendremos la herramienta o herramientas que tiene la idea */
         public List<int> Herramientas4RevolucionIndustrialIdea { get; set; } = new List<int>();
 
@@ -30,18 +32,23 @@ namespace Emprendimiento_Codigo_Limpio_Entrega2.Models
 
         public Dictionary<string, string> ColoresEconomia { get; set; }
 
+        
+
 
         public IdeaModel() { }
-        public IdeaModel(string nombreIdea, float inversionRequeridaIdea, float objetivosDeIngresosIdea)
+        public IdeaModel(string nombreIdea, float inversionRequeridaIdea, float objetivosDeIngresosIdea, float inversionInfraestructura)
         {
 
             CodigoIdea = GenerarCodigoUnico();
             NombreIdea = nombreIdea;
             InversionRequeridaIdea = inversionRequeridaIdea;
             ObjetivosDeIngresosIdea = objetivosDeIngresosIdea;
-
+            InversionInfraestructura = inversionInfraestructura;
 
         }
+
+
+
 
         public void RecorrerColores()
         {
@@ -130,6 +137,11 @@ namespace Emprendimiento_Codigo_Limpio_Entrega2.Models
         public void ModificarValorTotal(float nuevoValorTotal)
         {
             ObjetivosDeIngresosIdea = nuevoValorTotal;
+        }
+
+        public void ModificarInversionInfraestructura(float inversionInfraestructura)
+        {
+            InversionInfraestructura = inversionInfraestructura;
         }
 
     }

@@ -86,11 +86,15 @@ namespace Emprendimiento_Codigo_Limpio_Entrega2.Controllers
             string nombre = idea.NombreIdea;
             float inversion_idea = idea.InversionRequeridaIdea;
             float total_idea = idea.ObjetivosDeIngresosIdea;
+            float inversionInfraestructura = idea.InversionInfraestructura;
 
             IdeaModel ideal = desarrolloRegionalModel.ObtenerIdeaPorCodigo(id, colombia);
             ideal.ModificarValorInversion(inversion_idea);
             ideal.ModificarValorTotal(total_idea);
+            ideal.ModificarInversionInfraestructura(inversionInfraestructura);
+
             return View("~/Views/GestionIdea/Ver_ideas.cshtml", colombia.IdeasDesarrolloRegional);
+
         }
 
     }

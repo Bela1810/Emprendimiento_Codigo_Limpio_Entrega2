@@ -317,5 +317,35 @@ namespace Emprendimiento_Codigo_Limpio_Entrega2.Models
 
             return IdeasConDesarrolloSostenible;
         }
+
+        public IdeaModel EncontrarMayorInversionInfraestructura(DesarrolloRegionalModel desarrolloRegionalModel)
+        {
+            IdeaModel ideaConMayorInfraestructura = null;
+
+            foreach (IdeaModel idea in desarrolloRegionalModel.IdeasDesarrolloRegional)
+            {
+                if (ideaConMayorInfraestructura == null || idea.InversionInfraestructura > ideaConMayorInfraestructura.InversionInfraestructura)
+                {
+                    ideaConMayorInfraestructura = idea;
+                }
+            }
+
+            return ideaConMayorInfraestructura;
+        }
+
+        public List<IdeaModel> EncontrarIdeasQueSuImpactoContenga(DesarrolloRegionalModel desarrolloRegionalModel)
+        {
+            List<IdeaModel> ideasImpactandoQueSuImpactoContenga = new List<IdeaModel>();
+
+          foreach (IdeaModel ideaModel in desarrolloRegionalModel.IdeasDesarrolloRegional)
+            {
+                if (ideaModel.ImpactosEconomicosIdea.Contains("Naranja") || (ideaModel.ImpactosEconomicosIdea.Contains("Morado")))
+                {
+                    ideasImpactandoQueSuImpactoContenga.Add(ideaModel);
+                }
+            }
+
+            return ideasImpactandoQueSuImpactoContenga;
+        }
     }
 }

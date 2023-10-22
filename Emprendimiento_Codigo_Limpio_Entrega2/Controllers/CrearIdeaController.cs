@@ -37,10 +37,12 @@ namespace Emprendimiento_Codigo_Limpio_Entrega2.Controllers
             try
             {
                 var codigo_ultima_idea = (Session["colombia"] as DesarrolloRegionalModel)?.IdeasDesarrolloRegional.LastOrDefault().CodigoIdea ?? 0;  
+
                 ideaModel.CodigoIdea = codigo_ultima_idea + 1;
                 string nombre = ideaModel.NombreIdea;
                 float inversion_idea = ideaModel.InversionRequeridaIdea;
                 float total_idea = ideaModel.ObjetivosDeIngresosIdea;
+                float inversionInfraestructura = ideaModel.InversionInfraestructura;
 
                 Session["IdeaActual"] = ideaModel;
                 

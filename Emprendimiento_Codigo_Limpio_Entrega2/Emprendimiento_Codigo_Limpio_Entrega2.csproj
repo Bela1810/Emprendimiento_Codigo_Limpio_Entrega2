@@ -154,6 +154,11 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Imagenes\Imagen_1.png" />
+    <Content Include="Imagenes\Imagen_2..png" />
+    <Content Include="Imagenes\Imagen_3..png" />
+    <Content Include="Imagenes\Imagen_4.png" />
+    <Content Include="Imagenes\Imagen_5..png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -182,7 +187,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Gestion_ideas.cshtml" />
     <Content Include="Views\CrearIdea\Crear_color.cshtml" />

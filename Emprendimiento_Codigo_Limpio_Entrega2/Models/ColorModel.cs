@@ -18,7 +18,7 @@ namespace Emprendimiento_Codigo_Limpio_Entrega2.Models
             ColoresEconomia["Verde"] = "Relacionado con la agricultura, ganadería, pesca y minería.";
             ColoresEconomia["Azul"] = "Incluye industria y manufactura, contribuye al crecimiento económico mediante la producción de bienes.";
             ColoresEconomia["Rojo"] = "Compuesto por servicios como educación, salud y finanzas, es esencial para el bienestar económico y social.";
-            ColoresEconomia["Morado"] = "Centrado en la investigación y desarrollo, impulsa la innovación y la tecnología avanzada.";
+            ColoresEconomia["Morado"] = "Centrado en la investigación y desarrollo, impulsa la innovación y la tecnología avanzada fomentando territorios inteligentes.";
             ColoresEconomia["Dorado"] = "Involucra al gobierno y organizaciones sin fines de lucro, proporciona servicios públicos y sociales.";
             ColoresEconomia["Amarillo"] = "Representa el sector de la construcción y obras públicas, impulsando el desarrollo de infraestructura.";
             ColoresEconomia["Naranja"] = "Incluye el sector de la energía, contribuyendo a la producción y distribución de energía.";

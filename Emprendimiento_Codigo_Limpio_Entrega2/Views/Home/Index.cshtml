@@ -2,18 +2,186 @@
     ViewBag.Title = "Página principal";
 }
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+
 <h1>EMPRENDIMIENTO 4RI</h1>
-<p>El Gobierno Nacional desea apoyar los mejores emprendimientos que en su idea de negocio incluyan herramientas de la 4RI y beneficien la transformación social y económica del país, para lograrlo lanza un programa a nivel nacional, y desea contratarlo a usted para que desarrolle una herramienta digital que capture la información de todas las ideas de negocio y luego ayude a elegir las mejores propuestas.</p>
-<h3>Aquí puedes gestionar tus ideas y ver estadísticas sobre ellas.</h3>
+
+<p class="parrafo-general">
+    Esta aplicación estaría diseñada para capturar, organizar y evaluar
+    ideas de negocio que incluyan herramientas de la Cuarta Revolución
+    Industrial (4RI) y que beneficien la transformación social
+    y económica del país.
+</p>
+
+<div class="parrafos">
+
+    <h3 class="parrafo-funcionalidades">
+        Funcionalidades
+    </h3>
+
+    <h3 class="parrafo-1">
+        1. Registro de ideas
+    </h3>
+
+    <h3 class="parrafo-2">
+        2. Presentación de Idea de Negocio
+    </h3>
+
+    <h3 class="parrafo-3">
+        3. Almacenamiento de Datos
+    </h3>
+
+    <h3 class="parrafo-4">
+        4. Evaluación y Selección de ideas
+    </h3>
+
+    <h3 class="parrafo-5">
+        5. Retroalimentación y seguimiento
+    </h3>
+
+
+</div>
 
 <div>
     @using (Html.BeginForm("GestionIdeas", "Home"))
     {
-        <input type="submit" value="Gestión de ideas" class="btn btn-primary" />
+        <input type="submit" value="Gestión de ideas" class="btn btn-primary gestion-btn" />
     }
 
     @using (Html.BeginForm("EstadisticasIdea", "Home"))
     {
-        <input type="submit" value="Estadísticas de una idea" class="btn btn-primary" />
+        <input type="submit" value="Estadísticas de una idea" class="btn btn-primary estadisticas-btn" />
     }
 </div>
+
+<style>
+
+    .parrafos {
+        position: relative;
+        top: 30px;
+    }
+
+    .parrafo-1 {
+        font-size: 20px;
+        font-family: Consolas;
+        position: relative;
+        top: 20px;
+        left: 30px;
+    }
+
+    .parrafo-2 {
+        font-size: 20px;
+        font-family: Consolas;
+        position: relative;
+        top: -10px;
+        left: 400px;
+    }
+
+    .parrafo-3 {
+        font-size: 20px;
+        font-family: Consolas;
+        position: relative;
+        top: -40px;
+        left: 900px;
+    }
+
+    .parrafo-4 {
+        font-size: 20px;
+        font-family: Consolas;
+        position: relative;
+        top: 10px;
+        left: 90px;
+    }
+
+    .parrafo-5 {
+        font-size: 20px;
+        font-family: Consolas;
+        position: relative;
+        top: -20px;
+        left: 700px;
+    }
+
+    .parrafo-general {
+        font-size: 25px;
+        font-family: 'Ubuntu', sans-serif;
+        color: #000000;
+        margin-bottom: 20px;
+        text-align: center;
+        position: relative;
+        top: -5px;
+    }
+
+    .parrafo-funcionalidades {
+        font-size: 30px;
+        font-family: Consolas;
+    }
+
+
+    h1 {
+        font-size: 50px;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+    }
+
+
+    .gestion-btn {
+        display: inline-block;
+        font-size: 18px;
+        text-align: center;
+        background-color: #F2A154;
+        color: #ffffff;
+        border-radius: 40px;
+        cursor: pointer;
+        position: absolute;
+        top: 550px;
+        left: 410px;
+        width: 200px;
+        border: none;
+        font-family: 'Roboto', sans-serif;
+        font-family: 'Ubuntu', sans-serif;
+    }
+
+    .estadisticas-btn {
+        display: inline-block;
+        font-size: 18px;
+        text-align: center;
+        background-color: #F2A154;
+        color: #ffffff;
+        border-radius: 40px;
+        cursor: pointer;
+        position: absolute;
+        top: 550px;
+        border: none;
+        left: 850px;
+        width: 300px;
+        font-family: 'Roboto', sans-serif;
+        font-family: 'Ubuntu', sans-serif;
+    }
+
+
+    .btn-primary {
+        background-color: #F2A154;
+    }
+
+        .btn-primary:hover {
+            background-color: #0a00ff;
+        }
+
+    body {
+        background-image: url('../../Imagenes/Imagen_1.png');
+        background-size: 90%;
+        background-color: #A5EAF3;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+    }
+
+    div {
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+</style>

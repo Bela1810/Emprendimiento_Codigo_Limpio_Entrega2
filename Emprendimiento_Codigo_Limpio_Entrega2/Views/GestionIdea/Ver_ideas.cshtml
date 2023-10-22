@@ -24,6 +24,11 @@
         <strong>Objetivos de ingresos:</strong> @Html.DisplayFor(modelItem => idea.ObjetivosDeIngresosIdea)
     </p>
 
+    <p>
+        <strong>Inversión infraestructura:</strong> @Html.DisplayFor(modelItem => idea.InversionInfraestructura)
+    </p>
+
+
     if (idea.Miembros != null && idea.Miembros.Count > 0)
     {
         <p>
